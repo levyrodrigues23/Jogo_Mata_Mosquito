@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Game</title>
     <script src="./script.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body onresize="ajustaTamanhoPalcoJogo()">
+<body onload="ajustaTamanhoPalcoJogo()" onresize="ajustaTamanhoPalcoJogo()">
     
 <div class="painel">
-<div class="vidas">
-    <img src="imagens/coracao_vazio.png" class="coracao">
-    <img src="imagens/coracao_cheio.png" class="coracao">
-    <img src="imagens/coracao_cheio.png" class="coracao">
+    <div class="vidas">
+        <img id="v1" src="imagens/coracao_cheio.png" class="coracao">
+        <img id="v2" src="imagens/coracao_cheio.png" class="coracao">
+        <img id="v3" src="imagens/coracao_cheio.png" class="coracao">
+    </div>
+    <div class="cronometro">
+        Tempo restante: <span id="cronometro"></span> 
+    </div>
+</div>
 
-</div>
-<div class="cronometro">
-    Tempo restante: ? 
-</div>
-</div>
+<script>
+    document.getElementById("cronometro").innerHTML = tempo;
 
-    <script>
-        posicaoRandomica()
-        setInterval(function(){
-            posicaoRandomica()
-        }, 1000)
-    </script>
+    var criaMosquito = setInterval(function() {
+        posicaoRandomica();
+    }, criaMosquitoTempo);
+</script>
 </body>
 </html>
